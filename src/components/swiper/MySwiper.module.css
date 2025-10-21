@@ -1,0 +1,67 @@
+.wrapper {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+/* .swiper_container {
+  position: relative;
+} */
+/* .progress_bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 2px;
+  overflow: hidden;
+  z-index: 1;
+}
+.progress_fill {
+  width: 0%;
+  height: 100%;
+  background: white;
+  animation: fill 10s linear forwards;
+  z-index: 2;
+} */
+/* @keyframes fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
