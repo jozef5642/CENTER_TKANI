@@ -9,7 +9,7 @@ export const Header = () => {
           Мы на WB
         </a>
         <nav className={styles.navigation}>
-          <Link to="/" className={styles.link}>
+          <Link to="" className={styles.link}>
             О нас
           </Link>
           <Link to="/" className={styles.link}>
@@ -32,6 +32,12 @@ export const Header = () => {
       <section className={styles.bottom_bar}>
         <div className={styles.transitions}>
           <button className={styles.catalog}>Каталог</button>
+          <select id="select1" className={styles.catalog} name="Catalog">
+            <option value="">
+              Каталог2
+            </option>
+            <option value=""></option>
+          </select>
           <Link to="/" className={`${styles.our_work} ${styles.link}`}>
             Работы из наших тканей
           </Link>
@@ -53,6 +59,7 @@ export const Header = () => {
               type="text"
               placeholder="Поиск по сайту"
               className={styles.search_input}
+              name="search"
             />
             <img
               src="/Loupe.svg"
@@ -60,7 +67,7 @@ export const Header = () => {
               className={styles.search_img}
             />
           </div>
-          <Link to="/">
+          <Link to="/log_in">
             <img src="/User Icon.svg" alt="" className={styles.user_img} />
           </Link>
           <Link to="/">
