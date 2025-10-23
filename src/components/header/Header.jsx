@@ -1,9 +1,16 @@
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
+import MenuPanel from './modal/Modal';
+
+
 
 export const Header = () => {
+
+  
+  const [expanded, setExpanded] = useState(false);
   return (
-    <div className={styles.wrapper}>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <section className={styles.top_bar}>
         <a href="" className={styles.link}>
           Мы на WB
@@ -32,12 +39,6 @@ export const Header = () => {
       <section className={styles.bottom_bar}>
         <div className={styles.transitions}>
           <button className={styles.catalog}>Каталог</button>
-          <select id="select1" className={styles.catalog} name="Catalog">
-            <option value="">
-              Каталог2
-            </option>
-            <option value=""></option>
-          </select>
           <Link to="/" className={`${styles.our_work} ${styles.link}`}>
             Работы из наших тканей
           </Link>

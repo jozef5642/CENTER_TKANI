@@ -1,8 +1,31 @@
 import styles from "./Modal.module.css";
+import React from 'react';
 
-export const Modal = ({}) => {
+export default function MenuPanel({ expanded, onMouseEnter, onMouseLeave }) {
   return (
-    <div className={styles.wrapper}>
+    <div
+      style={{
+        flexGrow: 1,
+        transition: 'width 0.3s ease',
+        width: expanded ? '70%' : '30%',
+        backgroundColor: '#f0f0f0',
+        overflow: 'hidden',
+        padding: 20,
+      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <h2>Меню</h2>
+      <p>Здесь содержимое меню, которое разворачивается.</p>
+    </div>
+  );
+}
+
+
+
+
+{/* <div className={styles.wrapper}  onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}>
       <section className={styles.modal_left}>
         <h3 className={styles.modal_title}>Для одежды</h3>
         <div className={styles.modal_links}>
@@ -73,6 +96,4 @@ export const Modal = ({}) => {
           </Link>
         </div>
       </section>
-    </div>
-  );
-};
+    </div> */}
