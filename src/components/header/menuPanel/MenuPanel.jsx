@@ -1,23 +1,32 @@
-import styles from "./Modal.module.css";
 import React from 'react';
 
-export default function MenuPanel({ expanded, onMouseEnter, onMouseLeave }) {
+export default function MenuPanel() {
   return (
-    <div
+    <ul
       style={{
-        flexGrow: 1,
-        transition: 'width 0.3s ease',
-        width: expanded ? '70%' : '30%',
-        backgroundColor: '#f0f0f0',
-        overflow: 'hidden',
-        padding: 20,
+        position: 'absolute',
+        top: '100%',
+        left: 0,
+        margin: 0,
+        padding: '10px 0',
+        listStyle: 'none',
+        backgroundColor: '#fff',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        borderRadius: 4,
+        minWidth: 150,
+        zIndex: 1000,
       }}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
-      <h2>Меню</h2>
-      <p>Здесь содержимое меню, которое разворачивается.</p>
-    </div>
+      <li style={{ padding: '8px 20px', cursor: 'pointer', userSelect: 'none' }}>
+        Ткань 1
+      </li>
+      <li style={{ padding: '8px 20px', cursor: 'pointer', userSelect: 'none' }}>
+        Ткань 2
+      </li>
+      <li style={{ padding: '8px 20px', cursor: 'pointer', userSelect: 'none' }}>
+        Ткань 3
+      </li>
+    </ul>
   );
 }
 

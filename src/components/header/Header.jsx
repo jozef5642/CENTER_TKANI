@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import MenuPanel from './modal/Modal';
+import MenuPanel from './menuPanel/MenuPanel';
 
 
 
 export const Header = () => {
 
-  
-  const [expanded, setExpanded] = useState(false);
+   const [open, setOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <section className={styles.top_bar}>
@@ -38,7 +38,17 @@ export const Header = () => {
       </section>
       <section className={styles.bottom_bar}>
         <div className={styles.transitions}>
-          <button className={styles.catalog}>Каталог</button>
+
+      <div
+      style={{ position: 'relative', display: 'inline-block' }}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}>
+      <button className={styles.catalog}>Каталог</button>
+
+     {open && <MenuPanel />}
+    </div> 
+          
+
           <Link to="/" className={`${styles.our_work} ${styles.link}`}>
             Работы из наших тканей
           </Link>
