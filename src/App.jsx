@@ -1,18 +1,23 @@
 import './App.css'
-import { Footer } from './components/footer/Footer'
-import { BrowserRouter } from "react-router-dom"
-import { Header } from './components/header/Header'
+import "@radix-ui/themes/styles.css";
+import { BrowserRouter } from "react-router-dom";
+import { Approuter } from './components/approuter/Approuter';
+import { Footer } from './components/footer/Footer';
+import { Header } from './components/header/Header';
+import { Container } from '@radix-ui/themes';
+
 
 function App() {
-  
+ 
 
   return (
     <>
     <BrowserRouter>
       <Header/>
+        <Approuter/>
       <Footer/>
     </BrowserRouter>
-     
+      
     </>
   )
 }
