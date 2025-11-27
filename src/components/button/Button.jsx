@@ -45,15 +45,15 @@ export let Button_TextVersion = () => {//Текстовая кнопка
     );
 }
 
-export let Button_PersonalAccount = () => { //Кнопка личный кабинет
+export let Button_PersonalAccount = ({Name}) => { //Кнопка личный кабинет
 
     return(
         <>
             <button 
-                className="text-[16px] text-white border bg-[#888888] rounded-lg
-                            px-[14px] py-[8px] hover:bg-[#4D4D4D]"
+                className="max-h-[33px] text-[16px] text-white border bg-[#888888] rounded-lg
+                            px-[14px] hover:bg-[#4D4D4D]"
             >
-                Сохранить
+                {Name}
             </button>                
         </>
     );

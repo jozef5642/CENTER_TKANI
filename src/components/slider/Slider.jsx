@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-export const Slider = () => {
+export const Slider = ({Name}) => {
   const slides = [
     "/Hero Image Right.jpg",
     "/Hero Image Left.jpg",
@@ -54,7 +54,7 @@ export const Slider = () => {
 
       {/* === Текст поверх === */}
       <div className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide drop-shadow-lg text-right">
-        Ткань <br/>для одежды
+        Ткань <br/> для {Name}
       </div>
 
       {/* Стрелки */}

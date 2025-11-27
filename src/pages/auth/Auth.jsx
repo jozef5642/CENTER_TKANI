@@ -33,7 +33,7 @@ export const Auth = () => {
 
                  <button
                     type="button"
-                    className="bg-accent mt-2 text-white px-6 py-2 rounded-lg hover:bg-accentDark transition-colors"
+                    className="bg-b_fone mt-2 text-white px-6 py-2 rounded-lg hover:bg-accentDark transition-colors"
                     >
                     Войти 
                 </button>
@@ -46,7 +46,7 @@ export const Auth = () => {
                     <NavLink to={REGISTRATION_ROUTE}>
                         <button
                             type="button"
-                            className="bg-b_fone mt-2 text-accentDark px-6 py-2 rounded-lg border-solid border-2 border-accentDark"
+                            className="bg-none mt-2 text-black px-6 py-2 rounded-lg border-solid border-[1px] border-black"
                             >
                             Зарегистрируйтесь 
                         </button> 

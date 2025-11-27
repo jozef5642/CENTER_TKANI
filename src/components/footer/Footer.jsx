@@ -1,6 +1,7 @@
 import { Button_2l } from "../button/Button";
 import styles from "./Footer.module.css"
 import { NavLink } from "react-router-dom";
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE, REGISTRATION_ROUTE, ABOUTUS_ROUTE} from "../../utils/consts";
 
 export let Footer = () =>{
 
@@ -56,12 +57,12 @@ export let Footer = () =>{
                     lg:w-[300px] md:w-[220px] ">
                         <li className="text-[17px] font-semibold">Компания</li>
                         <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">Личный кабинет</li></NavLink>
-                        <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">О нас</li></NavLink>
-                        <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">Контакты</li></NavLink>
-                        <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">Оплата и доставка</li></NavLink>
-                        <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">Часто задаваемые вопросы</li></NavLink>
-                        <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">Политика конфиденциальности</li></NavLink>
-                        <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">Пользовательское соглашение</li></NavLink>
+                        <NavLink to={ABOUTUS_ROUTE}><li className="text-[14px] text-[#888888] text-start my-[5px]">О нас</li></NavLink>
+                        <NavLink to={`${ABOUTUS_ROUTE}#contacts`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Контакты</li></NavLink>
+                        <NavLink to={`${ABOUTUS_ROUTE}#delivery`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Оплата и доставка</li></NavLink>
+                        <NavLink to={`${ABOUTUS_ROUTE}#questions`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Часто задаваемые вопросы</li></NavLink>
+                        <NavLink ><li className="text-[14px] text-[#888888] text-start my-[5px]">Политика конфиденциальности</li></NavLink>
+                        <NavLink ><li className="text-[14px] text-[#888888] text-start my-[5px]">Пользовательское соглашение</li></NavLink>
                     </ul>
                 </div>  
             </section>

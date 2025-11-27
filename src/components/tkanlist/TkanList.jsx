@@ -13,7 +13,14 @@ const {tkans} = useContext(Context)
 
 
 
-        <div className="min-w-screen min-h-screen flex justify-between m-5 gap-3">
+        <div className="min-w-screen min-h-screen
+                grid
+                grid-cols-2        /* мобильные — 2 колонки */
+                md:grid-cols-3     /* планшеты — 3 колонки */
+                xl:grid-cols-4     /* компьютеры — 4 колонки (если нужно) */
+                gap-3
+                m-5"
+        >
             {tkans.tkans.map(tkan =>
             <TkanItem key={tkan.id} tkan={tkan}/>
             )}

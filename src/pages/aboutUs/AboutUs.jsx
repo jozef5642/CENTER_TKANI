@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./AboutUs.module.css";
 import { Breadcrumbs } from "../../components/breadcrumbs/Breadcrumbs";
+import { useLocation } from "react-router-dom";
 
 export const AboutUs = () => {
   const [overlayOpen, setOverlayOpen] = useState(null);
@@ -10,35 +11,20 @@ export const AboutUs = () => {
     setOverlayOpen(overlayOpen === index ? null : index);
   };
 
-  useEffect(() => {
-    const handleHashScroll = () => {
-      const hash = window.location.hash.replace("#", "");
-      if (hash) {
-        setTimeout(() => {
-          scrollToHashElement(hash);
-        }, 100);
-      }
-    };
-    handleHashScroll();
-    window.addEventListener("hashchange", handleHashScroll);
-    return () => {
-      window.removeEventListener("hashchange", handleHashScroll);
-    };
-  }, []);
+  const { hash } = useLocation();
 
-  const scrollToHashElement = (hash) => {
-    const element = document.getElementById(hash);
-    if (element) {
-      const headerHeight = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+    useEffect(() => {
+        if (hash) {
+            const el = document.querySelector(hash);
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [hash]);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+  
+
+  
   
 
   return (

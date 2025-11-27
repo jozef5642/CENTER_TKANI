@@ -17,6 +17,8 @@ export let Header = observer(() =>{
     const [openMenu, setOpenMenu] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
 
+    const {user} = useContext(Context)
+
     return(
     <>
         {/* Мобильное меню */}
@@ -134,10 +136,27 @@ export let Header = observer(() =>{
                                     <img src="./Bag Icon.svg" alt="Корзина" className="w-6 h-6" />
                                 </NavLink>
 
-                                
+                                {user.isAuth ? 
+                                    <NavLink to={ADMIN_ROUTE} className="hidden md:block">
+                                        <Avatar.Root className="inline-flex h-6 w-6 select-none items-center justify-center overflow-hidden rounded-full bg-gray-200 align-middle"> //Главный контейнер
+                                                        <Avatar.Image
+                                                        className="h-full w-full object-cover"
+                                                        src="https://i.pravatar.cc/100"//адрес картинки 
+                                                        alt="User avatar"
+                                                        />
+                                                        <Avatar.Fallback //картинка если не прогрузилась(JD)
+                                                        className="text-gray-700 text-sm font-medium"
+                                                        delayMs={600}
+                                                        >
+                                                        JD
+                                                        </Avatar.Fallback>
+                                                    </Avatar.Root>
+                                    </NavLink>
+                                    : 
                                 <Link to={LOGIN_ROUTE} className="hidden md:block">
                                     <img src="./User Icon.svg" alt="Профиль" className="w-6 h-6" />
                                 </Link>
+                            }
                             </div>
                             
                         </div>   

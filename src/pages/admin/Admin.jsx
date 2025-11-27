@@ -1,3 +1,4 @@
+import { Button_PersonalAccount, Button_Load } from "../../components/button/Button";
 import styles from "./Admin.module.css"
 import * as Avatar from "@radix-ui/react-avatar";
 
@@ -7,14 +8,11 @@ export let Admin = () => {
   return(
     <>
       <section className="bg-white md:min-w-[919px] flex flex-col rounded-3xl p-5">
-          <h1 className="text-accentDark mb-4 md: text-[38px] font-bold w-full h-[46px] font-medium
+          <h1 className="text-accentDark mb-4 md: text-[38px] font-bold w-full h-[46px]
           ">Личный кабинет</h1>
           <div className="text-accentDark md: flex flex-row aligh-center justify-between ">
           <h6 className="text-[20px] ml-4 font-medium">Личные данные</h6>
-          <button className=" mr-2 mb-2 w-[103px] h-[33px] bg-[#888888] text-light rounded-lg content-center
-          hover:bg-[#4D4D4D]"
-          >Сохранить
-          </button>
+          <Button_PersonalAccount Name={`Сохранить`}/>
           </div>   
       
 
@@ -34,9 +32,7 @@ export let Admin = () => {
                 </Avatar.Fallback>
               </Avatar.Root>
               <div>
-                <button className=" mr-2 mb-2 w-full h-[33px] text-accentDark border border-black rounded-md"
-                >Загрузить фотографию
-                </button>
+                <Button_Load/>
               </div>
           </div>
 
@@ -64,10 +60,7 @@ export let Admin = () => {
               <input className="w-full bg-[#F1F0EE] min-h-[38px] rounded-md pl-2" name="myInput" />
             </div>
 
-            <button className=" m-2 w-[103px] h-[33px] bg-[#888888] text-light rounded-lg content-center
-          hover:bg-[#4D4D4D]"
-            >Сохранить
-            </button>
+            <Button_PersonalAccount Name={`Сохранить`}/>
           </div>
           <hr/>
 
@@ -75,10 +68,7 @@ export let Admin = () => {
             <h6 className="text-[20px] text-accentDark font-medium"
               >Смена пароля
               </h6>
-           <button className=" p-2 w-auto bg-[#888888] text-light rounded-lg content-center
-            hover:bg-[#4D4D4D]"
-            >Изменить пароль
-            </button>
+              <Button_PersonalAccount Name={`Изменить пароль`}/>
           </div>
 
           <div className="w-1/2 flex-col mt-4">

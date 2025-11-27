@@ -11,8 +11,8 @@ export let Shop = observer(() =>{
         <>
         <div className="mx-2 flex flex-col md:flex-row">
             
-            <Slider/>
-            <Slider/>
+            <Slider Name={"одежды"}/>
+            <Slider Name={"Дома"}/>
             
         </div>
         

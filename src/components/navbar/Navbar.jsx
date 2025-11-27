@@ -9,10 +9,10 @@ export let Navbar = () =>{
         <div className="flex justify-start">
             <ul className="flex flex-col md:flex-row lg:flex-row gap-3">
                 <NavLink to={ABOUTUS_ROUTE}><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">О нас</li></NavLink>
-                <NavLink ><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Оплата и доставка</li></NavLink>
-                <NavLink ><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Часто задаваемые вопросы</li></NavLink>
-                <NavLink ><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Программа лояльности</li></NavLink>
-                <NavLink ><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Контакты</li></NavLink> 
+                <NavLink to={`${ABOUTUS_ROUTE}#delivery`}><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Оплата и доставка</li></NavLink>
+                <NavLink to={`${ABOUTUS_ROUTE}#questions`}><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Часто задаваемые вопросы</li></NavLink>
+                <NavLink to={`${ABOUTUS_ROUTE}#contacts`}><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Программа лояльности</li></NavLink>
+                <NavLink to={`${ABOUTUS_ROUTE}#contacts`}><li className="text-[14px] text-[#888888] text-start my-[5px] hover:text-black transition-colors">Контакты</li></NavLink> 
             </ul>      
         </div>
         
