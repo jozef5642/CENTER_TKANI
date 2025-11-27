@@ -13,7 +13,7 @@ const {tkans} = useContext(Context)
 
 
 
-        <div className="min-w-screen min-h-screen
+        <div className="min-w-screen
                 grid
                 grid-cols-2        /* мобильные — 2 колонки */
                 md:grid-cols-3     /* планшеты — 3 колонки */

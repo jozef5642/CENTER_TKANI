@@ -12,13 +12,16 @@ const {tkans} = useContext(Context)
     return(
         <>
         
-            <Card className="h-full" >
-            <div className="bg-white rounded-lg p-3 cursor-pointer">   
+            <Card>
+            <div className="bg-white rounded-lg group
+                            p-3 cursor-pointer h-[calc(100%-40px)] hover:h-full">   
                 <img src={tkan.img}/>
-                <h6 className="text-accentDark text-neutral-950 font-semibold">{tkan.name}</h6>
-                <h5 className="text-accent text-accent font-semibold">{tkan.price} ₽/м</h5>
+                <h6 className="text-black font-semibold">{tkan.name}</h6>
+                <h5 className="text-accent text-b_fone font-semibold">{tkan.price} ₽/м</h5>
 
-                <div>
+                <div className="opacity-0 transform transition-all duration-300
+                                group-hover:opacity-100"
+                >
                     <Button_1l/>
                 </div>
             </div> 
