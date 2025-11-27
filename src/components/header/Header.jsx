@@ -51,9 +51,9 @@ export let Header = observer(() =>{
 
                 {/* Navbar */}
                 <div 
-                    className={`relative w-full z-50
+                    className={`relative w-full 
                     transition-all duration-300 
-                    ${openMenu ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}
+                    ${openMenu ? "max-h-60 opacity-100 z-50" : "max-h-0 opacity-0 -z-10"}`}
                 >
                     <Navbar/>
                 </div>
@@ -126,9 +126,9 @@ export let Header = observer(() =>{
                         
                         
                         <div className="flex justify-between items-center gap-7 xl:w-[50%]">
-                            <NavLink to={SHOP_ROUTE}>
+                            
                             <Logo/>
-                            </NavLink>
+                            
                             <div className="flex justify-between items-center md:gap-2">
                                 <Searchbar/>
 
