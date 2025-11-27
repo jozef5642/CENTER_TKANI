@@ -10,14 +10,27 @@ import * as Avatar from "@radix-ui/react-avatar";
 import { Context } from "../../main";
 import { observer } from "mobx-react-lite";
 import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE, REGISTRATION_ROUTE, ABOUTUS_ROUTE} from "../../utils/consts";
-
+import { Typebar } from "../../library/typebar/Typebar";
 
 export let Header = observer(() =>{
 
     const [openMenu, setOpenMenu] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
-
+    const [isOpen, setIsOpen] = useState(false);
     const {user} = useContext(Context)
+
+    const timeoutRef = useRef(null);
+      
+        const handleMouseEnter = () => {
+          if (window.innerWidth < 1024) return;
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
+          setIsOpen(true);
+        };
+      
+        const handleMouseLeave = () => {
+          if (window.innerWidth < 1024) return;
+          timeoutRef.current = setTimeout(() => setIsOpen(false), 300);
+        };
 
     return(
     <>
@@ -90,12 +103,30 @@ export let Header = observer(() =>{
 
                     <section className="flex xl:flex-row justify-between xl:items-center md:flex-col-reverse">
                         <div className="flex justify-between items-center gap-7 md:overflow-x-hidden">
+                            <div className="xl:inline-block">
                             <button
-                            className="flex items-center text-[14px] text-white flex-row px-[14px]
+                                className="flex items-center text-[14px] text-white flex-row px-[14px]
                                         lg:py-2 md:py-[6px] bg-b_fone rounded-lg"
+                            
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
                             >
                             Каталог <img src="/Arrow.svg" alt="Arrow" className="ml-1 mt-1"/>
                             </button>
+
+                            {isOpen && (
+                                          <div
+                                            className="absolute left-0 mt-2 w-fit bg-light text-dark rounded-xl shadow-lg 
+                                                       transition-all duration-300 ease-in-out z-50 animate-fadeIn"
+                                            onMouseEnter={handleMouseEnter}
+                                            onMouseLeave={handleMouseLeave}
+                                          >
+                                                <div className="bg-[#FFFF] p-2 flex flex-row gap-3 rounded-xl w-fit">
+                                                <Typebar/>
+                                                </div>
+                                            </div>
+                            )}
+                            </div>
                         
                             <NavLink to="" className="text-[14px] text-black">
                                 Работы из наших тканей
