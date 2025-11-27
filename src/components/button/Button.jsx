@@ -1,7 +1,7 @@
 import styles from "./Button.module.css"
 
 
-export let Button_1l = ({children}) => {//Кнопка
+export let Button_1l = () => {//Кнопка
 
     return(
         <>
@@ -9,7 +9,7 @@ export let Button_1l = ({children}) => {//Кнопка
             className="text-[16px] text-white bg-b_fone rounded-lg
                     w-[288px] max-h-[40px] p-2 px-[14px] hover:bg-[#860202]"
         >
-            {children}
+            В корзину
         </button>
         
         </>
