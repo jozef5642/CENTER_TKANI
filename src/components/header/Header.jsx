@@ -12,7 +12,7 @@ import { observer } from "mobx-react-lite";
 import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE, REGISTRATION_ROUTE, ABOUTUS_ROUTE} from "../../utils/consts";
 
 
-export let Header = () =>{
+export let Header = observer(() =>{
 
     const [openMenu, setOpenMenu] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
@@ -146,4 +146,4 @@ export let Header = () =>{
         </header>               
     </>
     );
-}
+});
