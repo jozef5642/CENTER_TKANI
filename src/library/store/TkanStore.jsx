@@ -47,7 +47,7 @@ export default class TkanStore {
     return this._types;
   }
 
-  get user() {
+  get brands() {
     return this._brands;
   }
 
