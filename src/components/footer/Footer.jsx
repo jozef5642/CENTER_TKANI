@@ -70,7 +70,7 @@ const { tkans } = useContext(Context);
                     lg:w-[300px] md:w-[220px] ">
                         <li className="text-[17px] font-semibold">Компания</li>
                         <NavLink><li className="text-[14px] text-[#888888] text-start my-[5px]">Личный кабинет</li></NavLink>
-                        <NavLink to={ABOUTUS_ROUTE}><li className="text-[14px] text-[#888888] text-start my-[5px]">О нас</li></NavLink>
+                        <NavLink to={`${ABOUTUS_ROUTE}#about`}><li className="text-[14px] text-[#888888] text-start my-[5px]">О нас</li></NavLink>
                         <NavLink to={`${ABOUTUS_ROUTE}#contacts`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Контакты</li></NavLink>
                         <NavLink to={`${ABOUTUS_ROUTE}#delivery`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Оплата и доставка</li></NavLink>
                         <NavLink to={`${ABOUTUS_ROUTE}#questions`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Часто задаваемые вопросы</li></NavLink>
