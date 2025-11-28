@@ -3,23 +3,24 @@ import styles from "./Typebar.module.css"
 import { Context } from "../../main";
 import { useState, useRef, useContext } from "react";
 
-export let Typebar = observer(() =>{
-    const {tkans} = useContext(Context)
-    return(
-        <>
-        <div className="w-full flex gap-2">
-            {tkans.types.map(type =>
-                  
-                  <ul className="bg-[#F1F0EE] p-4 rounded-lg  text-accentDark text-nowrap w-[293px] text-[17px] cursor-pointer" key={type.id}>
+export const Typebar = observer(({ Styles }) => {
+    const { tkans } = useContext(Context);
+
+    return (
+        <div className={`flex ${Styles} gap-2`}>
+            {tkans.types?.map(type => (
+                <ul
+                    className="bg-[#F1F0EE] rounded-lg text-black 
+                               text-nowrap w-[293px] text-center text-[17px] cursor-pointer"
+                    key={type.id}
+                >
                     {type.name}
 
-                
-                    </ul>
-                  )}
-
+                    {tkans.brands?.map(brand => (
+                        <li key={brand.id}>{brand.name}</li>
+                    ))}
+                </ul>
+            ))}
         </div>
-
-        
-        </>
-    )
-})
+    );
+});
