@@ -15,7 +15,7 @@ export let Tkanlist = observer(() => {
         setVisibleCount(2);
       }
 
-      if (window.innerWidth < 1024) { // планшет/ (md)
+      else if (window.innerWidth < 940) { // планшет/ (md)
         setVisibleCount(3);
       }
       else {
