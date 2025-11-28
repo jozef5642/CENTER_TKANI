@@ -5,16 +5,18 @@ import {
   LOGIN_ROUTE,
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
-  ABOUTUS_ROUTE
+  ABOUTUS_ROUTE,
+  MAIN_PAGE
 } from "./utils/consts";
 
 import { Basket } from "./pages/basket/Basket";
-import { Shop } from "./pages/shop/Shop";
+import { MainPage } from "./pages/mainpage/MainPage";
 import { Auth } from "./pages/auth/Auth";
 import { Tkanpage } from "./pages/tkanpage/Tkanpage";
 import { Registration } from "./pages/registration/Registration";
 import { AboutUs } from "./pages/aboutUs/AboutUs";
 import { Admin } from "./pages/admin/Admin";
+import { Shop } from "./pages/shop/Shop";
 
 export const authRoutes = [
   {
@@ -28,6 +30,10 @@ export const authRoutes = [
 ];
 
 export const publicRoutes = [
+  {
+    path: MAIN_PAGE,
+    element: <MainPage />,
+  },
   {
     path: SHOP_ROUTE,
     element: <Shop />,
