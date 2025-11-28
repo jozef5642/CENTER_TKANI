@@ -2,9 +2,14 @@ import { Button_2l } from "../button/Button";
 import styles from "./Footer.module.css"
 import { NavLink } from "react-router-dom";
 import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE, REGISTRATION_ROUTE, ABOUTUS_ROUTE} from "../../utils/consts";
+import { Typebar } from "../../library/typebar/Typebar";
+import { Logo } from "../logo/Logo";
+import { Context } from "../../main";
+import { useContext } from "react";
+
 
 export let Footer = () =>{
-
+const { tkans } = useContext(Context);
     
 
     return(
@@ -40,17 +45,25 @@ export let Footer = () =>{
 
             <section className="m-2 lg:m-[64px]">
                 <div className="
-                flex justify-between flex-wrap gap-3
+                flex justify-between items-start flex-wrap gap-3
                 lg:flex-row md:flex-nowrap md:justify-between"
                 >
                     {/* Для одежды */}
-                    <ul className="border-2 border-indigo-600 min-w-[150px] max-w-[161px] md:w-[220px] h-[100px] lg:w-[300px]">
-                        <li className="text-[14px] text-[#888888] text-start my-[5px]"></li>
-                    </ul>
+                    <ul className="
+                    lg:w-[300px] md:w-[220px] ">
+                        <li className="text-[17px] font-semibold cursor-pointer">Для одежды</li>
+                        {tkans.brands?.map(brand => (
+                        <li className="text-[14px] text-[#888888] text-start my-[5px] cursor-pointer" key={brand.id}>{brand.name}</li>
+                        ))}
 
+                    </ul>
                     {/* Для дома */}
-                    <ul className="border-2 border-indigo-600 min-w-[150px] max-w-[161px] md:w-[220px] h-[100px] lg:w-[300px]">
-                        <li className="text-[14px] text-[#888888] text-start my-[5px]"></li>
+                    <ul className="
+                    lg:w-[300px] md:w-[220px] ">
+                        <li className="text-[17px] font-semibold cursor-pointer">Для дома</li>
+                        {tkans.brands?.map(brand => (
+                        <li className="text-[14px] text-[#888888] text-start my-[5px] cursor-pointer" key={brand.id}>{brand.name}</li>
+                        ))}
                     </ul>
 
                     <ul className="
@@ -69,10 +82,7 @@ export let Footer = () =>{
 
             <section className="m-6 lg:m-[64px]">
                 <div className="flex justify-between">
-                    <div className="flex gap-1">
-                    <img className="w-[32px] md:w-[36px]" src="./Logo Icon.svg" alt="LOGO"/>
-                    <img className="w-[105px] md:w-[120px]" src="./CENTER TKANI.svg" alt="LOGO"/>
-                </div>
+                    <Logo/>
                  <img className="w-[143px] h-[48px] md:w-[169px] md:h-[56px]" src="./footer-img.jpg" alt="image"/>
                 </div>
 
