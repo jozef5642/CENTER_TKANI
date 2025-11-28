@@ -1,34 +1,42 @@
-import { observer } from "mobx-react-lite"
-import styles from "./TkanList.module.css"
-import { useContext } from "react"
-import { Context } from "../../main"
+import { useState, useEffect } from "react";
+import { observer } from "mobx-react-lite";
+import { useContext } from "react";
+import { Context } from "../../main"; // путь к твоему контексту
 import { TkanItem } from "../tkanitem/TkanItem"
 
+export let Tkanlist = observer(() => {
+  const { tkans } = useContext(Context);
+  const [visibleCount, setVisibleCount] = useState(4);
 
-export let Tkanlist = observer(() =>{
+  // хук для отслеживания ширины окна
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) { // мобильные устройства (sm)
+        setVisibleCount(2);
+      }
 
-const {tkans} = useContext(Context)
-    return(
-        <>
+      if (window.innerWidth < 1024) { // планшет/ (md)
+        setVisibleCount(3);
+      }
+      else {
+        setVisibleCount(4); // десктоп
+      }
+    };
 
+    handleResize(); // установить сразу при монтировании
+    window.addEventListener("resize", handleResize);
 
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-        <div className="min-w-screen
-                grid
-                grid-cols-2        /* мобильные — 2 колонки */
-                md:grid-cols-3     /* планшеты — 3 колонки */
-                xl:grid-cols-4     /* компьютеры — 4 колонки (если нужно) */
-                gap-3
-                m-5"
-        >
-            {tkans.tkans.map(tkan =>
-            <TkanItem key={tkan.id} tkan={tkan}/>
-            )}
-        </div>
-       
-            
-        
-       
-        </>
-    )
-})
+  // берём только нужное количество элементов
+  const itemsToShow = tkans.tkans.slice(0, visibleCount);
+
+  return (
+    <div className="flex gap-4 mx-2">
+      {itemsToShow.map((tkan) => (
+        <TkanItem key={tkan.id} tkan={tkan} />
+      ))}
+    </div>
+  );
+});
