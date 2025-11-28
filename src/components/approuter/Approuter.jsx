@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { authRoutes, publicRoutes } from "../../Routes";
-import { SHOP_ROUTE } from "../../utils/consts";
+import { MAIN_PAGE } from "../../utils/consts";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../main";
-import { Container } from "@radix-ui/themes";
 
 
 export let Approuter = observer(() => {
@@ -37,7 +36,7 @@ export let Approuter = observer(() => {
                 />
                     ))}
 
-                <Route path="*" element={<Navigate to={SHOP_ROUTE} replace />} />
+                <Route path="*" element={<Navigate to={MAIN_PAGE} replace />} />
 
             </Routes>
        {/* </div> */}
