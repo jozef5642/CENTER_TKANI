@@ -37,7 +37,7 @@ export let Header = observer(() =>{
         {/* Мобильное меню */}
         <header className="m-[20px] md:m-[5px] max-w-screen">
             <section className="md:hidden w-full">
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                     <Logo/>
 
                 <div className="flex gap-2 relative">
