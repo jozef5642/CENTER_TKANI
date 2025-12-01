@@ -13,7 +13,7 @@ export default class TkanStore {
    ]
 
    this._tkans = [
-    {id: 1, name: 'Двунитка Мокрый Асфальт', price: 800, rating: 5, img:'public/image_wet_asphalt_1.png'},
+    {id: 1, name: 'Двунитка Мокрый Асфальт', price: 500, rating: 5, img:'public/image_wet_asphalt_1.png'},
     {id: 2, name: 'Двунитка Мокрый Асфальт', price: 800, rating: 5, img:'public/image_wet_asphalt_2.png'},
     {id: 3, name: 'Двунитка Мокрый Асфальт', price: 800, rating: 5, img:'public/image_wet_asphalt_3.png'},
     {id: 4, name: 'Двунитка Мокрый Асфальт', price: 800, rating: 5, img:'public/image_wet_asphalt_4.png'},

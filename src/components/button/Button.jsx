@@ -7,7 +7,7 @@ export let Button_1l = () => {//Кнопка
         <>
         <button 
             className="text-[16px] text-white bg-b_fone rounded-lg
-                    w-[288px] h-[40px] p-2 px-[14px] hover:bg-[#860202]"
+                   h-[40px] p-2 px-[14px] hover:bg-[#860202]"
         >
             В корзину
         </button>
