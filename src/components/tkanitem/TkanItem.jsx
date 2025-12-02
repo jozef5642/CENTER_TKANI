@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { Context } from "../../main"
 import { Card } from "@radix-ui/themes"
 import { Button_1l, Basket_Icon } from "../button/Button"
-import { CostCalculator } from "../../costсalculator/CostCalculator"
+import { CostCalculator } from "../costсalculator/CostCalculator"
 
 
 export let TkanItem = ({ tkan }) => {

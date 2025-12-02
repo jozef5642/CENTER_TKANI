@@ -78,7 +78,7 @@ export let CostCalculator = ({ price }) => {
         </button>
       </div>
 
-      <p className="text-[18px] font-semibold">{price.toFixed(0)} ₽</p>
+      <p className="font-semibold text-[18px] truncate">{price.toFixed(0)} ₽</p>
     </div>
   )
 }
