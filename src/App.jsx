@@ -5,6 +5,7 @@ import { Approuter } from './components/approuter/Approuter';
 import { Footer } from './components/footer/Footer';
 import { Header } from './components/header/Header';
 import { Container } from '@radix-ui/themes';
+import { Currentorder } from './components/currentOrder/CurrentOrder';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
       <Header/>
         <Approuter/>
+        <Currentorder/>
       <Footer/>
     </BrowserRouter>
       
