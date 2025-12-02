@@ -15,7 +15,7 @@ export let MainPage = observer(() => {
     const { hash } = useLocation();
 
     useEffect(() => {
-        if (hash) {
+        if (hash && document.visibilityState === "visible") {
 
             const id = hash.replace("#", "");
             const el = document.getElementById(id);
