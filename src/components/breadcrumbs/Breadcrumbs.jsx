@@ -32,7 +32,7 @@ export const Breadcrumbs = () => {
 
           return (
             <li key={to}>
-              {isLast ? <span className={styles.title_path}>{name}</span> : <Link className={styles.title_path} to={to}>{value}</Link>}
+              {isLast ? <span className={styles.title_path}>{`> ${name}`}</span> : <Link className={styles.title_path} to={to}>{value}</Link>}
             </li>
           );
         })}
