@@ -15,23 +15,23 @@ export let Currentorder = () => {
                     <img className="w-[98px] rounded-lg" src="./image_wet_asphalt_3.png" alt="" />
                 </div>
                 <div>
-                    <p className="">3 товара на сумму</p>
+                    <p className="text-[16px] text-[#888888]">3 товара на сумму</p>
                     <p className="text-[16px] text-[#101010] font-semibold">1 600 ₽</p>
                 </div>
 
                 <div>
-                    <p>Способ получения</p>
-                    <p>Самовывоз</p>
+                    <p className="text-[16px] text-[#888888]">Способ получения</p>
+                    <p className="text-[16px] text-[#101010] font-semibold">Самовывоз</p>
                 </div>
 
                 <div>
-                    <p>Способ оплаты</p>
-                    <p>Наличными при получении</p>
+                    <p className="text-[16px] text-[#888888]">Способ оплаты</p>
+                    <p className="text-[16px] text-[#101010] font-semibold">Наличными при получении</p>
                 </div>
 
                 <div>
-                    <p>Дата доставки</p>
-                    <p>11 сентября, 11:00 - 13:00</p>
+                    <p className="text-[16px] text-[#888888]">Дата доставки</p>
+                    <p className="text-[16px] text-[#101010] font-semibold">11 сентября, 11:00 - 13:00</p>
                 </div>
             </div>
 
