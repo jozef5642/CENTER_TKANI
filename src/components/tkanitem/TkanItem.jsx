@@ -16,11 +16,11 @@ export let TkanItem = ({ tkan }) => {
     return (
         <>
 
-            <Card onClick={()=>navigate(TKAN_ROUTE + '/' + tkan.id)}>>
+            <Card>
                 <div className="bg-white rounded-lg group
                     p-3 cursor-pointer md:h-[calc(100%-90px)] hover:h-full"
                 >
-                    <img src={tkan.img} />
+                    <img src={tkan.img} onClick={()=>navigate(TKAN_ROUTE + '/' + tkan.id)} />
                     <h6 className="text-black font-semibold">{tkan.name}</h6>
                     <h5 className="text-accent text-b_fone font-semibold">{tkan.price} ₽/м</h5>
                     <div className="md:hidden">
