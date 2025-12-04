@@ -5,15 +5,18 @@ import { Context } from "../../main"
 import { Card } from "@radix-ui/themes"
 import { Button_1l, Basket_Icon } from "../button/Button"
 import { CostCalculator } from "../costсalculator/CostCalculator"
+import { useNavigate  } from "react-router-dom"
+import { TKAN_ROUTE } from "../../utils/consts"
 
 
 export let TkanItem = ({ tkan }) => {
+    const navigate = useNavigate()
 
     const { tkans } = useContext(Context)
     return (
         <>
 
-            <Card>
+            <Card onClick={()=>navigate(TKAN_ROUTE + '/' + tkan.id)}>>
                 <div className="bg-white rounded-lg group
                     p-3 cursor-pointer md:h-[calc(100%-90px)] hover:h-full"
                 >
