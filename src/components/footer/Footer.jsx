@@ -6,7 +6,10 @@ import { Typebar } from "../../library/typebar/Typebar";
 import { Logo } from "../logo/Logo";
 import { Context } from "../../main";
 import { useContext } from "react";
-
+import logo_instagam from "../../assets/insta.svg"
+import logo_WhapsApp from "../../assets/whatsapp.svg"
+import logo_Telegram from "../../assets/telegram.svg"
+import footer_image from "../../assets/footer-img.jpg"
 
 export let Footer = () => {
     const { tkans } = useContext(Context);
@@ -86,7 +89,7 @@ export let Footer = () => {
                 <section className="m-6 lg:m-[64px]">
                     <div className="flex justify-between">
                         <Logo />
-                        <img className="w-[143px] h-[48px] md:w-[169px] md:h-[56px]" src="./footer-img.jpg" alt="image" />
+                        <img className="w-[143px] h-[48px] md:w-[169px] md:h-[56px]" src={footer_image} alt="image" />
                     </div>
 
                     <div className="flex flex-col mt-4 md:flex-row lg:flex-row-reverse justify-between">
@@ -95,11 +98,11 @@ export let Footer = () => {
                             <p className="text-[12px] md:text-[14px] text-[#888888]">Подпишитесь на нас в соцсетях</p>
                             <div className="flex justify-center items-center gap-2">
                                 <hr />
-                                <NavLink><img className="w-[17px]" src="./insta.svg" alt="Instagram" /></NavLink>
+                                <NavLink><img className="w-[17px]" src={logo_instagam} alt="Instagram" /></NavLink>
                                 <hr />
-                                <NavLink><img className="w-[17px]" src="./whatsapp.svg" alt="WhatsApp" /></NavLink>
+                                <NavLink><img className="w-[17px]" src={logo_WhapsApp} alt="WhatsApp" /></NavLink>
                                 <hr />
-                                <NavLink><img className="w-[17px]" src="./telegram.svg" alt="Telegram" /></NavLink>
+                                <NavLink><img className="w-[17px]" src={logo_Telegram} alt="Telegram" /></NavLink>
                             </div>
                         </div>
                         <p className="flex justify-start text-[14px] text-right">© 2025 Центр Ткани. Все права защищены.</p>

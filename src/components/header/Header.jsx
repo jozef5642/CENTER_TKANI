@@ -11,6 +11,9 @@ import { Context } from "../../main";
 import { observer } from "mobx-react-lite";
 import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE, REGISTRATION_ROUTE, ABOUTUS_ROUTE} from "../../utils/consts";
 import { Typebar } from "../../library/typebar/Typebar";
+import user_icon from "../../assets/User Icon.svg"
+import basket_icon from "../../assets/Bag Icon.svg"
+
 
 
 export let Header = observer(() =>{
@@ -165,7 +168,7 @@ export let Header = observer(() =>{
                                 <Searchbar/>
 
                                 <NavLink to={SHOP_ROUTE}>
-                                    <img src="./Bag Icon.svg" alt="Корзина" className="w-6 h-6" />
+                                    <img src={basket_icon} alt="Корзина" className="w-6 h-6" />
                                 </NavLink>
 
                                 {user.isAuth ? 
@@ -186,7 +189,7 @@ export let Header = observer(() =>{
                                     </NavLink>
                                     : 
                                 <Link to={LOGIN_ROUTE} className="hidden md:block">
-                                    <img src="./User Icon.svg" alt="Профиль" className="w-6 h-6" />
+                                    <img src={user_icon} alt="Профиль" className="w-6 h-6" />
                                 </Link>
                             }
                             </div>
