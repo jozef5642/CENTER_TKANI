@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import { MAIN_PAGE } from "../../utils/consts";
 import logo from "../../assets/Logo Icon.svg"
 import center_tkani from "../../assets/CENTER TKANI.svg"
+import { useScrollToHash } from "../../hooks/useScrollToHash";
 
 export let Logo = () =>{
-
+useScrollToHash(100);
     return(
         <>
             <NavLink to={`${MAIN_PAGE}#main`}>
