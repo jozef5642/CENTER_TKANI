@@ -4,12 +4,13 @@ export default class TkanStore {
   constructor() {
    this._types = [
     {id: 1, name: 'Для дома'},
-    {id: 2, name: 'Для шитья'}
+    {id: 2, name: 'Для шитья'},
+    
    ]
 
    this._brands = [
     {id: 1, name: 'Египет'},
-    {id: 2, name: 'Азия'}
+    {id: 2, name: 'Азия'},
    ]
 
    this._tkans = [
@@ -24,8 +25,14 @@ export default class TkanStore {
    ]
 
    this._selectedType = {}
+   this._selectedBrand = {}//выделение объекта
     makeAutoObservable(this);
+
+    //выделение объекта 
+    
   }
+
+  
 
   setTypes(types) {
     this._types = types;
@@ -39,12 +46,12 @@ export default class TkanStore {
     this._tkans = tkans;
   }
 
-  setSelectedType(type){
-    this._setSelectedType = type
+  setSelectedType(type){//выделение объекта
+    this._selectedType = type
   } 
   
-  getSelectedBrand(brand){
-    this._getSelectedBrand = brand
+  setSelectedBrand(brand){
+    this._selectedBrand = brand
   } 
 
   get types() {
@@ -59,11 +66,13 @@ export default class TkanStore {
     return this._tkans;
   }
 
-  get setSelectedType() {
-    return this._setSelectedType
+  get selectedType() {
+    return this._selectedType//выделение объекта
+  }
+
+  get selectedBrand() {
+    return this._selectedBrand//выделение объекта
   }
   
-  get setSelectedBrand() {
-    return this._setSelectedtype
-  }
+
 }
