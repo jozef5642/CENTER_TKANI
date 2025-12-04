@@ -7,20 +7,21 @@ import { Button_1l, Basket_Icon } from "../button/Button"
 import { CostCalculator } from "../costсalculator/CostCalculator"
 import { useNavigate  } from "react-router-dom"
 import { TKAN_ROUTE } from "../../utils/consts"
+import { useScrollToHash } from"../../hooks/useScrollToHash"
 
 
 export let TkanItem = ({ tkan }) => {
     const navigate = useNavigate()
-
+    useScrollToHash();
     const { tkans } = useContext(Context)
     return (
         <>
-
+            
             <Card>
                 <div className="bg-white rounded-lg group
                     p-3 cursor-pointer md:h-[calc(100%-90px)] hover:h-full"
                 >
-                    <img src={tkan.img} onClick={()=>navigate(TKAN_ROUTE + '/' + tkan.id)} />
+                    <img src={tkan.img} onClick={()=>navigate(`${TKAN_ROUTE}/${tkan.id}#target`)} />
                     <h6 className="text-black font-semibold">{tkan.name}</h6>
                     <h5 className="text-accent text-b_fone font-semibold">{tkan.price} ₽/м</h5>
                     <div className="md:hidden">
@@ -31,7 +32,7 @@ export let TkanItem = ({ tkan }) => {
                     >
 
                         <div className="hidden md:block">
-                            <div className="w- full flex flex-col gap-2">
+                            <div className="w-full flex flex-col gap-2">
                                 <CostCalculator price={tkan.price} />
                                 <Button_1l />
                             </div>
