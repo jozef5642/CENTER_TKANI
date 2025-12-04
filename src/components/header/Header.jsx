@@ -163,7 +163,7 @@ export let Header = observer(() =>{
                             <div className="flex justify-between items-center md:gap-2">
                                 <Searchbar/>
 
-                                <NavLink to='/'>
+                                <NavLink to={SHOP_ROUTE}>
                                     <img src="./Bag Icon.svg" alt="Корзина" className="w-6 h-6" />
                                 </NavLink>
 
