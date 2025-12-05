@@ -1,17 +1,13 @@
 import styles from "./CostCalculator.module.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
-export let CostCalculator = ({ price }) => {
-  
+export let CostCalculator = ({ price, onPriceChange }) => {
   const [count, setCount] = useState(1.0)
 
+  const MIN = 0.5
+  const STEP = 0.1
 
-
-  const MIN = 0.5 //Минимальное значение
-  const STEP = 0.1 //Шаг
-
-  // Уменьшить значение
   const dec = () => {
     setCount(prev => {
       const next = +(prev - STEP).toFixed(1)
@@ -19,44 +15,47 @@ export let CostCalculator = ({ price }) => {
     })
   }
 
-  // Увеличить значение
   const inc = () => {
     setCount(prev => +(prev + STEP).toFixed(1))
   }
-  //Обработка события onChange (Ввод)
+
   const onChangeIn = (e) => {
-  const value = e.target.value;
+    const value = e.target.value
 
-  // Если пользователь стёр всё → оставлить пустую строку
-  if (value === "") {
-    setCount("");
-    return;
+    if (value === "") {
+      setCount("")
+      onPriceChange(0)
+      return
+    }
+
+    const num = parseFloat(value)
+
+    if (!isNaN(num)) {
+      setCount(num)
+      onPriceChange(num * price)
+    }
   }
 
-  const num = parseFloat(value);
-
-  // Если ввели число → сохранить
-  if (!isNaN(num)) {
-    setCount(num);
-  }
-};
-  //Обработчик события onBlur(При отводе мыши от пустого значения становится автоматически 0.5)
   const onBlurIn = () => {
-  if (count === "") {
-    setCount(0.5);
+    if (count === "") {
+      setCount(0.5)
+      onPriceChange(0.5 * price)
+    }
   }
-};
 
-  //Подсчет стоимости
-  price = count=== "" ? 0 : +(price * count.toFixed(1)) //Условия для решения кофликта типа данных(число || строка)
+  const finalPrice = count === "" ? 0 : price * count
 
-
+  // каждый рендер отправляем новое значение родителю
+  useEffect(() => {
+    onPriceChange(finalPrice)
+  }, [count])
 
   return (
     <div className="flex justify-between items-end w-full">
       <div className="flex items-center">
+
         <button
-          className="bg-[#FFFFFF] text-[18px] text-[#888888] font-semibold w-[50px] h-[46px] flex items-center justify-center border border-[#888888] rounded-l-lg"
+          className="bg-white text-[18px] text-[#888] font-semibold w-[50px] h-[46px] flex items-center justify-center border border-[#888] rounded-l-lg"
           onClick={dec}
         >
           -
@@ -67,18 +66,18 @@ export let CostCalculator = ({ price }) => {
           value={count}
           onChange={onChangeIn}
           onBlur={onBlurIn}
-          className="bg-[#E4E2DE] text-[18px] text-center font-semibold flex items-center justify-center w-[64px] h-[46px]"
+          className="bg-[#E4E2DE] text-[18px] text-center font-semibold w-[64px] h-[46px]"
         />
 
         <button
-          className="bg-[#FFFFFF] text-[18px] text-[#888888] font-semibold w-[50px] h-[46px] flex items-center justify-center border border-[#888888] rounded-r-lg"
+          className="bg-white text-[18px] text-[#888] font-semibold w-[50px] h-[46px] flex items-center justify-center border border-[#888] rounded-r-lg"
           onClick={inc}
         >
           +
         </button>
       </div>
 
-      <p className="font-semibold text-[18px] truncate">{price.toFixed(0)} ₽</p>
+
     </div>
   )
 }
