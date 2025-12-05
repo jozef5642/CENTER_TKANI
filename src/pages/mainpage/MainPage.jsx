@@ -15,7 +15,7 @@ export let MainPage = observer(() => {
     return (
         <>
             <section id="main">
-                <div className="mx-2 flex flex-col md:flex-row">
+                <div className="mx-2 flex flex-col lg:flex-row">
                     <Slider Name={"одежды"} />
                     <Slider Name={"Дома"} />
                 </div>
