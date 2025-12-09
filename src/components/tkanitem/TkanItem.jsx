@@ -25,10 +25,13 @@ export let TkanItem = ({ tkan }) => {
                     <img src={tkan.img} onClick={() => navigate(`${TKAN_ROUTE}/${tkan.id}#target`)} />
                     <h6 className="text-black font-semibold">{tkan.name}</h6>
                     <h5 className="text-accent text-b_fone font-semibold">{tkan.price} ₽/м</h5>
-                    <div className="md:hidden">
+
+                    <div className={`flex ${tkan.id % 2 === 0 ? 'justify-end' : 'justify-start'} md:hidden`}>
                         <Basket_Icon />
                     </div>
-                    <div className="opacity-0 transform transition-all duration-300
+
+                    <div
+                        className="opacity-0 transform transition-all duration-300
                                 group-hover:opacity-100"
                     >
 
