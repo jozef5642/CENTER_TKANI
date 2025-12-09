@@ -2,13 +2,16 @@ import styles from "./Shop.module.css"
 import { Typebar } from "../../library/typebar/Typebar"
 import { BrandBar } from "../../library/brandBar/BrandBar";
 import { Tkanlist } from "../../components/tkanlist/TkanList";
-export let Shop = () =>{
+export let Shop = () => {
 
-    return(
+    return (
         <>
-        <Typebar/>
-        <BrandBar/>
-        <Tkanlist/>
+            <div className="">
+                <Typebar />
+                <BrandBar />
+            </div>
+
+            <Tkanlist />
         </>
     );
 }

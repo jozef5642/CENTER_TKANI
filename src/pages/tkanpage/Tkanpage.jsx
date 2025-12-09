@@ -33,19 +33,19 @@ export let Tkanpage = () => {
                         </div>
 
                         {/* Миниатюры */}
-                        <div className="flex gap-2 justify-start">
+                        <div className="flex gap-[14px] justify-start">
                             {tkan.img.map((src, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setCurrent(src)}
-                                    className={`
+                                    className={` md:w-[107px] md:h-[120px]
                                         rounded-xl overflow-hidden border-2 transition ${current === src ? "border-b_fone" : "border-transparent"
                                         }`}
                                 >
                                     <img
                                         src={src}
                                         alt={`thumb-${i}`}
-                                        className="object-cover"
+                                        className="w-full object-cover"
                                     />
                                 </button>
                             ))}

@@ -79,7 +79,7 @@ export let Header = observer(() =>{
                 <div 
                     className={`relative w-full z-50 left-0
                                 transition-all duration-300
-                                ${openSearch ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}
+                                ${openSearch ? "max-h-60 opacity-100" : "max-h-0 opacity-0 hidden"}
                                 flex justify-center my-4
                                 `}
                 >

@@ -4,6 +4,7 @@ import { authRoutes, publicRoutes } from "../../Routes";
 import { MAIN_PAGE } from "../../utils/consts";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../main";
+import { Page404 } from "../../pages/page404/Page404";
 
 
 export let Approuter = observer(() => {
@@ -36,7 +37,7 @@ export let Approuter = observer(() => {
                 />
                     ))}
 
-                <Route path="*" element={<Navigate to={MAIN_PAGE} replace />} />
+                <Route path="*" element={<Page404/>} />
 
             </Routes>
        {/* </div> */}

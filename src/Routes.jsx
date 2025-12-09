@@ -6,7 +6,8 @@ import {
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
   ABOUTUS_ROUTE,
-  MAIN_PAGE
+  MAIN_PAGE,
+  PRIVACY_POLICY
 } from "./utils/consts";
 
 import { Basket } from "./pages/basket/Basket";
@@ -17,6 +18,7 @@ import { Registration } from "./pages/registration/Registration";
 import { AboutUs } from "./pages/aboutUs/AboutUs";
 import { Admin } from "./pages/admin/Admin";
 import { Shop } from "./pages/shop/Shop";
+import { PrivacyPolicy } from "./pages/privacyPolicy/PrivacyPolicy";
 
 export const authRoutes = [
   {
@@ -54,5 +56,9 @@ export const publicRoutes = [
     path: TKAN_ROUTE + "/:id",
     element: <Tkanpage/>,
   },
+  {
+    path: PRIVACY_POLICY,
+    element: <PrivacyPolicy/>
+  }
 
 ];
