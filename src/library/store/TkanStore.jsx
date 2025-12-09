@@ -42,7 +42,7 @@ export default class TkanStore {
     this._brands = brands;
   }
 
-  setTkan(tkan) {
+  setTkan(tkans) {
     this._tkans = tkans;
   }
 

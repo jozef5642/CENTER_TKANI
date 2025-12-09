@@ -3,36 +3,39 @@ import styles from "./Breadcrumbs.module.css";
 import { Link, useLocation } from "react-router-dom";
 
 export const Breadcrumbs = () => {
-    const breadcrumbNameMap = {
-        '/about_us' : '> О нас',
-        '/catalog_home' : '> Для дома ',
-        '/discounts' : '> Скидки и акции',
-        '/personal_account' : '> Личный кабинет',
-        '/our_works' : '> Работы из наших тканей',
-        '/privacy_policy' : '> Политика конфиденциальности',
-
-    }
-
-
+  const breadcrumbNameMap = {
+    '/AboutUs': 'О нас',
+    '/catalog_home': 'Для дома',
+    '/discounts': 'Скидки и акции',
+    '/personal_account': 'Личный кабинет',
+    '/our_works': 'Работы из наших тканей',
+    '/privacy_policy': 'Политика конфиденциальности',
+    '/login': 'Регистрация',
+  };
+  
 
   const location = useLocation();
-  const pathname = location.pathname;
-  const pathnames = pathname.split("/").filter((x) => x);
+  const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
     <nav aria-label="breadcrumb">
-      <ol>
+      <ol className={styles.breadcrumbs}>
         <li>
           <Link className={styles.title} to="/">Главная</Link>
         </li>
-        {pathnames.map((value, index) => {
+        {pathnames.map((_, index) => {
           const to = `/${pathnames.slice(0, index + 1).join("/")}`;
           const isLast = index === pathnames.length - 1;
-          const name = breadcrumbNameMap[to] || value
+          const name = breadcrumbNameMap[to] || "Неизвестно";
 
           return (
-            <li key={to}>
-              {isLast ? <span className={styles.title_path}>{`> ${name}`}</span> : <Link className={styles.title_path} to={to}>{value}</Link>}
+            <li key={to} className={styles.breadcrumbItem}>
+              <span className={styles.separator}> &gt; </span>
+              {isLast ? (
+                <span className={styles.title_path}>{name}</span>
+              ) : (
+                <Link className={styles.title_path} to={to}>{name}</Link>
+              )}
             </li>
           );
         })}

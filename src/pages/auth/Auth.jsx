@@ -2,11 +2,12 @@ import * as Tabs from "@radix-ui/react-tabs";
 import styles from "./Auth.module.css";
 import { REGISTRATION_ROUTE } from "../../utils/consts";
 import { Link, NavLink } from "react-router-dom";
+import { Breadcrumbs } from "../../components/breadcrumbs/Breadcrumbs";
 
 export const Auth = () => {
   return (
     <>
-    
+    <Breadcrumbs/>
         <div
       className="flex justify-center items-center min-h-screen"
     >
