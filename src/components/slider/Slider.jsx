@@ -34,8 +34,8 @@ export const Slider = ({Name}) => {
 
   return (
     <div className="flex justify-between">
-    <div className="relative w-full mb-2 flex justify-center md:justify-start items-start
-                    md:w-[90%] h-[269px] md:h-[500px] overflow-hidden rounded-2xl ml-0 md:ml-[30px]">
+    <div className="relative w-full flex justify-center
+                    h-[269px] md:h-[500px] overflow-hidden rounded-2xl">
       {/* Слайды */}
       <div
         className="flex transition-transform duration-700 ease-in-out"

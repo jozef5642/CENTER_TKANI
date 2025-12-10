@@ -126,7 +126,8 @@ export let Header = observer(() =>{
                                             onMouseLeave={handleMouseLeave}
                                           >
                                                 <div className="bg-[#FFFF] p-2 flex flex-row gap-3 rounded-xl w-fit">
-                                                <Typebar/>
+                                                    
+                                                <Typebar Styles={'flex gap-2'}/>
                                                 </div>
                                             </div>
                             )}

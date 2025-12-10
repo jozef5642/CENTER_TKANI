@@ -33,7 +33,7 @@ export let Tkanlist = observer(() => {
   const itemsToShow = tkans.tkans.slice(0, visibleCount);
 
   return (
-    <div className="flex gap-4 mx-2">
+    <div className="flex gap-[10px] md:gap-[13px] lg:gap-[16px]">
       {itemsToShow.map((tkan) => (
         <TkanItem key={tkan.id} tkan={tkan} />
       ))}

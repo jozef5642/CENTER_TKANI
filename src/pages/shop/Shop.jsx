@@ -6,12 +6,16 @@ export let Shop = () => {
 
     return (
         <>
-            <div className="">
-                <Typebar />
-                <BrandBar />
+            <div className="flex">
+                <div className="flex flex-col">
+                    <Typebar />
+                    <BrandBar />
+                </div>
+
+                <Tkanlist />
+
             </div>
 
-            <Tkanlist />
         </>
     );
 }

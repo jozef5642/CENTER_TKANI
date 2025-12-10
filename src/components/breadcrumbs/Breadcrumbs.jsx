@@ -8,9 +8,10 @@ export const Breadcrumbs = () => {
     '/catalog_home': 'Для дома',
     '/discounts': 'Скидки и акции',
     '/personal_account': 'Личный кабинет',
-    '/our_works': 'Работы из наших тканей',
-    '/privacy_policy': 'Политика конфиденциальности',
-    '/login': 'Регистрация',
+    '/our_works' : 'Работы из наших тканей',
+    '/Privacypolicy' : 'Политика конфиденциальности',
+    '/login' : 'Регистрация',
+    '/TermsofUse' : 'Пользовательское соглашение' 
   };
   
 

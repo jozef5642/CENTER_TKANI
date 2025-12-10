@@ -7,7 +7,8 @@ import {
   SHOP_ROUTE,
   ABOUTUS_ROUTE,
   MAIN_PAGE,
-  PRIVACY_POLICY
+  PRIVACY_POLICY,
+  TERMS_OF_USE
 } from "./utils/consts";
 
 import { Basket } from "./pages/basket/Basket";
@@ -19,6 +20,7 @@ import { AboutUs } from "./pages/aboutUs/AboutUs";
 import { Admin } from "./pages/admin/Admin";
 import { Shop } from "./pages/shop/Shop";
 import { PrivacyPolicy } from "./pages/privacyPolicy/PrivacyPolicy";
+import { TermsofUse } from "./pages/TermsOfUse/TermsofUse";
 
 export const authRoutes = [
   {
@@ -59,6 +61,10 @@ export const publicRoutes = [
   {
     path: PRIVACY_POLICY,
     element: <PrivacyPolicy/>
+  },
+  {
+    path: TERMS_OF_USE,
+    element: <TermsofUse/>
   }
 
 ];

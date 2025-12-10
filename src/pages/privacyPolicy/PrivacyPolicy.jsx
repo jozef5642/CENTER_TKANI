@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "../../components/breadcrumbs/Breadcrumbs";
 import { useScrollToHash } from "../../hooks/useScrollToHash";
 import styles from "./PrivacyPolicy.module.css";
 
@@ -5,6 +6,7 @@ export const PrivacyPolicy = () => {
   useScrollToHash();
   return (
     <>
+    <Breadcrumbs/>
       <div className="flex flex-col justify-center items-center">
         <h1 className=" text-center text-[24px] text-nowrap font-semibold mb-[30px]">Политика конфиденциальности</h1>
         <div id="target" className="mx-[14px] flex flex-col gap-[20px] xl:w-[742px]">

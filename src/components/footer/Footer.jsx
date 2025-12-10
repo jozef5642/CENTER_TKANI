@@ -1,7 +1,7 @@
 import { Button_2l } from "../button/Button";
 import styles from "./Footer.module.css"
 import { NavLink } from "react-router-dom";
-import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE, REGISTRATION_ROUTE, ABOUTUS_ROUTE, PRIVACY_POLICY } from "../../utils/consts";
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE, REGISTRATION_ROUTE, ABOUTUS_ROUTE, PRIVACY_POLICY, TERMS_OF_USE } from "../../utils/consts";
 import { Typebar } from "../../library/typebar/Typebar";
 import { Logo } from "../logo/Logo";
 import { Context } from "../../main";
@@ -81,7 +81,7 @@ export let Footer = () => {
                             <NavLink to={`${ABOUTUS_ROUTE}#delivery`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Оплата и доставка</li></NavLink>
                             <NavLink to={`${ABOUTUS_ROUTE}#questions`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Часто задаваемые вопросы</li></NavLink>
                             <NavLink to={`${PRIVACY_POLICY}#target`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Политика конфиденциальности</li></NavLink>
-                            <NavLink ><li className="text-[14px] text-[#888888] text-start my-[5px]">Пользовательское соглашение</li></NavLink>
+                            <NavLink to={`${TERMS_OF_USE}#target`}><li className="text-[14px] text-[#888888] text-start my-[5px]">Пользовательское соглашение</li></NavLink>
                         </ul>
                     </div>
                 </section>
