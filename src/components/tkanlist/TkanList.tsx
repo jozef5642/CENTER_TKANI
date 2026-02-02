@@ -1,0 +1,48 @@
+import { useState, useEffect } from "react";
+import { observer } from "mobx-react-lite";
+import { useContext } from "react";
+import { Context } from "../../main";
+import { TkanItem } from "../tkanitem/TkanItem"
+
+export const Tkanlist = observer(() => {
+  const context = useContext(Context);
+  
+  if (!context) {
+    return null;
+  }
+  
+  const { tkans } = context;
+  const [visibleCount, setVisibleCount] = useState<number>(4);
+
+  // хук для отслеживания ширины окна
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) { // мобильные устройства (sm)
+        setVisibleCount(2);
+      }
+      else if (window.innerWidth < 940) { // планшет/ (md)
+        setVisibleCount(3);
+      }
+      else {
+        setVisibleCount(4); // десктоп
+      }
+    };
+
+    handleResize(); // установить сразу при монтировании
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // берём только нужное количество элементов
+  const itemsToShow = tkans.tkans.slice(0, visibleCount);
+
+  return (
+    <div className="flex gap-[10px] md:gap-[13px] lg:gap-[16px]">
+      {itemsToShow.map((tkan) => (
+        <TkanItem key={tkan.id} tkan={tkan} />
+      ))}
+    </div>
+  );
+});
+
